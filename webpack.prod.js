@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'production',
-  entry: ['./src/js/index.js', './src/css/style.scss'],
+  entry: ['./src/js/index.js', './src/scss/style.scss'],
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'js/bundle.js',
@@ -27,43 +27,23 @@ module.exports = {
         use: ['babel-loader'],
       },
       {
-        test: /\.css$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {},
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              config: {
-                path: 'postcss.config.js',
-              },
-            },
-          },
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
         ],
       },
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
-            { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } },
-            { loader: 'sass-loader', options: { sourceMap: true } },
-        ],
-    },
       {
         test: /\.html$/,
         include: path.resolve(__dirname, 'src/views'),
         use: ['raw-loader'],
       },
+      {
+        test: /\.mp4$/,
+        use: 'file-loader?name=videos/[name].[ext]',
+      }, 
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
@@ -91,12 +71,16 @@ module.exports = {
   plugins: [
     new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
     new MiniCssExtractPlugin({
-      filename: 'css/style.css',
+      filename: 'style.css',
     }),
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, 'src/img'),
         to: path.resolve(__dirname, 'build/img'),
+      },
+      {
+        from: path.resolve(__dirname, 'src/video'),
+        to: path.resolve(__dirname, 'build/video'),
       },
     ]),
     new HtmlWebpackPlugin({
@@ -104,5 +88,10 @@ module.exports = {
       template: path.resolve(__dirname, 'src/index.html'),
       filename: path.resolve(__dirname, 'build/index.html'),
     }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.resolve(__dirname, 'src/walkthrough.html'),
+      filename: path.resolve(__dirname, 'build/walkthrough.html'),
+    })
   ],
 };

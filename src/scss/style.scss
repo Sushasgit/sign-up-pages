@@ -1,0 +1,55 @@
+@import "../../node_modules/normalize.css/normalize.css";
+@import 'fonts';
+@import 'buttons';
+@import 'header';
+@import 'sign-in';
+@import 'greeting';
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font: 16px 'Poppins', 'Helvetica' sans-serif;
+}
+
+.container {
+    max-width: 1720px;
+    padding: 16px;
+}
+
+.bg {
+    background-color: #132235;
+    background-image:
+        url(../img/bg-pattern.png),
+        url(../img/bg-svg-circles.svg),
+        linear-gradient(rgba(19,34,53, .9), rgba(16,58,47, .8));
+    background-repeat: no-repeat, repeat;
+    background-size: cover, cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-blend-mode: hard-light;
+
+    @media (max-width: 700px) {
+        background-color: #132235;
+        background-image:
+            url(../img/bg-pattern.png),
+            linear-gradient(rgba(19,34,53, .9),rgba(16,58,47, .8));
+    }
+}
+
+.error {
+    border-bottom: 2px solid red;
+    box-shadow: 0 4px 4px -2px rgba(255, 0, 0, 0.8);
+    color: red
+}
+
+.error-text {
+    color: red;
+}
+
+
+

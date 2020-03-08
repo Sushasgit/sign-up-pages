@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 460px) {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__image {
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    &__sign-up {
+        max-width: 140px;
+
+        @media (max-width: 460px) {
+            margin: 20px 0;
+        }
+    }
+}

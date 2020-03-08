@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   devtool: 'source-map',
   mode: 'development',
-  entry: ['./src/js/index.js'],
+  entry: ['./src/js/index.js', './src/scss/style.scss'],
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'js/bundle.js',
@@ -22,46 +22,25 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        use: ['babel-loader'],
       },
       {
-        test: /\.css$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              importLoaders: 1,
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              config: {
-                path: 'postcss.config.js',
-              },
-            },
-          },
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
         ],
       },
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
-            { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } },
-            { loader: 'sass-loader', options: { sourceMap: true } },
-        ],
-    },
       {
         test: /\.html$/,
         include: path.resolve(__dirname, 'src/views'),
         use: ['raw-loader'],
+      },
+      {
+        test: /\.mp4$/,
+        use: 'file-loader?name=videos/[name].[ext]',
       },
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
@@ -107,7 +86,7 @@ module.exports = {
   plugins: [
     new webpack.LoaderOptionsPlugin({ options: {} }),
     new MiniCssExtractPlugin({
-      filename: 'css/style.css',
+      filename: '/style.css',
     }),
     new OpenBrowserPlugin({ url: 'http://localhost:8000' }),
     new CopyWebpackPlugin([
@@ -116,10 +95,21 @@ module.exports = {
         to: path.resolve(__dirname, 'public/img'),
       },
     ]),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, 'src/video'),
+        to: path.resolve(__dirname, 'public/video'),
+      },
+    ]),
     new HtmlWebpackPlugin({
       inject: true,
       template: path.resolve(__dirname, 'src/index.html'),
       filename: path.resolve(__dirname, 'public/index.html'),
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.resolve(__dirname, 'src/walkthrough.html'),
+      filename: path.resolve(__dirname, 'public/walkthrough.html'),
     }),
   ],
 };

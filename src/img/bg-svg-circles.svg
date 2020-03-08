@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 2536 1911" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="21.6965575%" y1="26.2960764%" x2="58.6672824%" y2="63.9966819%" id="linearGradient-1">
+            <stop stop-color="#758899" offset="0%"></stop>
+            <stop stop-color="#9FB5B4" offset="31.630239%"></stop>
+            <stop stop-color="#9FB6B4" offset="50.1374519%"></stop>
+            <stop stop-color="#9EC5B0" offset="64.6275117%"></stop>
+            <stop stop-color="#9BDBAA" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="2536" height="1911"></rect>
+        <linearGradient x1="10%" y1="0%" x2="90%" y2="0%" id="linearGradient-4">
+            <stop stop-color="#A1A9B7" offset="16.8759032%"></stop>
+            <stop stop-color="#A1A9B7" offset="30%"></stop>
+            <stop stop-color="#9DC9AF" offset="84.9078757%"></stop>
+            <stop stop-color="#9DC9AF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="0%" id="linearGradient-5">
+            <stop stop-color="#9EBFB1" offset="10%"></stop>
+            <stop stop-color="#9EBFB1" offset="30%"></stop>
+            <stop stop-color="#9BDBAA" offset="70%"></stop>
+            <stop stop-color="#9BDBAA" offset="90%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2">
+            <g id="Group">
+                <g id="svg" opacity="0.5"></g>
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use id="Rectangle-path" fill="url(#linearGradient-1)" fill-rule="nonzero" opacity="0.0967633929" xlink:href="#path-2"></use>
+                <ellipse id="Oval" fill-opacity="0.8" fill="url(#linearGradient-4)" fill-rule="nonzero" opacity="0.234877232" mask="url(#mask-3)" cx="467.5" cy="585" rx="986.5" ry="832"></ellipse>
+                <ellipse id="Oval" fill-opacity="0.5" fill="url(#linearGradient-5)" fill-rule="nonzero" opacity="0.372879464" mask="url(#mask-3)" cx="456.156863" cy="1843.21038" rx="997.843137" ry="742.210383"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

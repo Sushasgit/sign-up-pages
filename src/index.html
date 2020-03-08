@@ -10,11 +10,60 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no"
     />
   </head>
-
   <body>
-    <div class="body">
-      <div class="background"></div>
-      <img src="./img/photo.jpg" alt="" />
-    </div>
+       <div class="bg">
+           <div class="container">
+               <header class="header">
+                    <a class="header__logo" href="#">
+                       <img class="header__image" src="img/logo.svg" alt="Company Logo">
+                    </a>
+                    <a
+                        class="btn btn--outline header__sign-up"
+                        class="btn btn--outline"
+                        href="./walkthrough.html"
+                    >
+                        Sign Up
+                    </a>
+               </header>
+               <section class="sign-in">
+                    <h1 class="sign-in__title">
+                        Sign-in
+                    </h1>
+                    <form class="sign-in__form ">
+                        <div class="sign-in__form-wrap">
+                            <input 
+                                required
+                                class="sign-in__input-field vaidate-input"
+                                placeholder="Email / Phone number"
+                                aria-label="Enter email or phone"
+                            >
+                            <input
+                                required
+                                class="sign-in__input-field"
+                                placeholder="Password"
+                                type="password"
+                                aria-label="Enter your password"
+                            >
+                        </div>
+                        <a class="sign-in__reset" href="#">
+                            Reset password
+                        </a>
+                        <div class="sign-in__btn-wrap">
+                            <button type="submit" class="btn btn--gradient submit-btn">
+                                Sign In
+                            </button>
+                            <div class="sign-in__or">
+                                or
+                            </div>
+                            <button class="btn btn--with-icon" href="#">
+                                <span class="btn--with-icon-label">
+                                    Sign in with
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+               </section>
+           </div>
+       </div>
   </body>
 </html>
