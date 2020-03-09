@@ -10,7 +10,7 @@ module.exports = {
   mode: 'development',
   entry: ['./src/js/index.js', './src/scss/style.scss'],
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'js/bundle.js',
   },
   optimization: {
@@ -92,24 +92,24 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, 'src/img'),
-        to: path.resolve(__dirname, 'public/img'),
+        to: path.resolve(__dirname, 'build/img'),
       },
     ]),
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, 'src/video'),
-        to: path.resolve(__dirname, 'public/video'),
+        to: path.resolve(__dirname, 'build/video'),
       },
     ]),
     new HtmlWebpackPlugin({
       inject: true,
       template: path.resolve(__dirname, 'src/index.html'),
-      filename: path.resolve(__dirname, 'public/index.html'),
+      filename: path.resolve(__dirname, 'build/index.html'),
     }),
     new HtmlWebpackPlugin({
       inject: true,
       template: path.resolve(__dirname, 'src/walkthrough.html'),
-      filename: path.resolve(__dirname, 'public/walkthrough.html'),
+      filename: path.resolve(__dirname, 'build/walkthrough.html'),
     }),
   ],
 };

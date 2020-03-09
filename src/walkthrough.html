@@ -11,29 +11,39 @@
     />
   </head>
   <body>
-       <div class="bg">
-           <div class="container">
-               <header class="header">
-                    <a class="header__logo" href="#">
-                       <img class="header__image" src="img/logo.svg" alt="Company Logo">
+       <div class="bg bg--square">
+            <div class="container">
+                <header class="header">
+                    <a class="header__logo" href="./index.html">
+                        <img
+                            class="header__image"
+                            src="img/logo.svg"
+                            alt="Company Logo"
+                        >
                     </a>
-               </header>
-               <section class="greeting">
+                </header>
+                <section class="greeting">
                     <h2 class="greeting__title">
                         Welcome aboard Coach
                     </h2>
                     <h3 class="greeting__subtitle">
                         Please watch the video to proceed
                     </h3>
-                    <div class="video-wrapper">
-                        <div class="video-inner">
-                            <video class="vid" poster="./video/video-poster.png">
-                                <source src="./video/promo.mp4" controls="controls" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                                Элемент video не поддерживается вашим браузером. 
+                    <div class="greeting__video-wrapper">
+                        <div class="greeting__video-inner">
+                            <video class="greeting__video" poster="./video/video-poster.png">
+                                <source 
+                                    src="./video/promo.mp4" 
+                                    controls="controls" 
+                                    type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
+                                >
+                                Your browser doesn't support video. 
                             </video>
-                            <button class="btn btn--gradient greeting__play">
+                            <button class="btn btn--base btn--gradient greeting__play">
                                 <svg width="18" height="18" viewBox="0 0 494.148 494.148">
-                                    <title>Play video button</title>
+                                    <title>
+                                        Play video button
+                                    </title>
                                     <path fill="#fff" d="M405.284 201.188L130.804 13.28C118.128 4.596 105.356 0 94.74 0 74.216 0 61.52 16.472 61.52 44.044v406.124c0 27.54 12.68 43.98 33.156 43.98 10.632 0 23.2-4.6 35.904-13.308l274.608-187.904c17.66-12.104 27.44-28.392 27.44-45.884.004-17.48-9.664-33.764-27.344-45.864z"/>
                                 </svg>
                             </button>                     
@@ -42,11 +52,11 @@
                     <h3 class="greeting__subtitle greeting__subtitle--xs">
                         Confirm that you watched the Training Video
                     </h3>
-                    <button class="btn btn--fill greeting__confirm">
+                    <button class="btn btn--base btn--fill greeting__confirm">
                         Confirm
                     </button>
-               </section>
-           </div>
+                </section>
+            </div>
        </div>
   </body>
 </html>

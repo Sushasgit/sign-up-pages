@@ -1,0 +1,70 @@
+.bg {
+    position: relative;
+    background-color: #132235;
+    background-image:
+        url(../img/bg-pattern.png),
+        url(../img/bg-svg-circles.svg),
+        linear-gradient(rgba(19,34,53, .9), rgba(16,58,47, .8));
+    background-repeat: no-repeat, repeat;
+    background-size: cover, cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-blend-mode: hard-light;
+
+    @media (max-width: 700px) {
+        background-color: #132235;
+        background-image:
+            url(../img/bg-pattern.png),
+            linear-gradient(rgba(19,34,53, .9),rgba(16,58,47, .8));
+    }
+
+    &--square.animate {
+        position: relative;
+        max-width: 100%;
+        overflow: hidden;
+
+        &::before, 
+        &::after {
+            content: '';
+            position: absolute;
+            right: -250px;
+            top: -150px;
+            width: 1000px;
+            height: 800px;
+            background-position: right top;
+            background-repeat: no-repeat;
+            z-index: 0;
+
+            @media (max-width: 700px) {
+                display: none;
+            }
+        }
+
+        &::before {
+            background-image: url(../img/square-2.svg);
+            animation: animate 5s ease-in-out;
+        }
+
+        &::after {
+            background-image: url(../img/square-2.svg);
+            animation: animate 4s linear;
+            transform: rotate(30deg) rotate(60deg);
+        }
+    }
+}
+
+@keyframes animate {
+    0%{
+        transform: translateX(-1000px) rotate(720deg);
+        opacity: 0;
+
+    }
+
+    100%{
+        transform: translateX(0) rotate(0);
+        opacity: 1;
+    }
+
+}

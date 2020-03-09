@@ -1,7 +1,9 @@
 const form = document.querySelector(".sign-in__form");
 const input = document.querySelector(".vaidate-input");
 const formWrap = document.querySelector(".sign-in__form-wrap");
-
+const animationEl = document.querySelector(".bg--square");
+const video = document.querySelector(".greeting__video");
+const btnPlay = document.querySelector(".greeting__play");
 
 redirect = () => {
     location.href = './walkthrough.html';
@@ -16,7 +18,7 @@ createError = (text) => {
 
 deleteError = () => {
     const errorEl = document.querySelector(".error-text");
-    if(errorEl) {
+    if (errorEl) {
         errorEl.remove();
     }
 }
@@ -48,3 +50,14 @@ handleForm = (event) => {
 
 form ? form.addEventListener('submit', handleForm) : null;
 
+if (animationEl) {
+    window.onload = function() {
+        animationEl.classList.add('animate');
+    }
+}
+
+playPause = () =>  { 
+    video.paused ? video.play() : video.pause()
+}
+
+btnPlay ? btnPlay.addEventListener("click", playPause) : null;
